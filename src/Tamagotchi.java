@@ -18,7 +18,7 @@ public class Tamagotchi {
     }
 
     public void feed() {
-        System.out.println("[" + name + "] eats and becomes less hungry");
+        System.out.println("[" + name + "] äter och är mindre hungrig!");
         hunger -= 2;
         if (hunger < 0) {
             hunger = 0;
@@ -27,12 +27,12 @@ public class Tamagotchi {
 
     public void hi() {
         int wordNum = new Random().nextInt(words.size());
-        System.out.println("[" + name + "] says: " + words.get(wordNum));
+        System.out.println("[" + name + "] Säger: " + words.get(wordNum));
         reduceBoredom();
     }
 
     public void teach(String word) {
-        System.out.println("[" + name + "] learns: " + word);
+        System.out.println("[" + name + "] kan nu ordet: " + word);
         words.add(word);
         reduceBoredom();
     }
@@ -46,7 +46,7 @@ public class Tamagotchi {
     }
 
     public void printStats() {
-        System.out.println("Name: " + name + " || Hunger: " + hunger + " || Boredom: " + boredom + " || Vocabulary: " + words.size() + " words");
+        System.out.println("Namn: " + name + " || Hunger: " + hunger + " || Uttråkad: " + boredom + " || Vokabulär: " + words.size() + " Ord");
     }
 
     public boolean getAlive() {
@@ -54,7 +54,7 @@ public class Tamagotchi {
     }
 
     private void reduceBoredom() {
-        System.out.println("[" + name + "] is now less bored!");
+        System.out.println("[" + name + "] är nu mindre uttråkad!");
         boredom -= 2;
         if (boredom < 0) {
             boredom = 0;

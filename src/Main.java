@@ -4,31 +4,31 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to Tamagotchi!");
+        System.out.println("Väkomen till Tamagotchi!");
 
         Tamagotchi myTama = new Tamagotchi();
 
-        System.out.println("Please choose a name for your Tamagotchi!");
+        System.out.println("Var snäll att välja ett namn till din tamagotchi!");
         myTama.name = scanner.nextLine();
 
-        System.out.println("Great! " + myTama.name + " is a beautiful name!");
-        System.out.println("Press any key to continue");
+        System.out.println("Perfekt! " + myTama.name + " är ett vakert namn!");
+        System.out.println("Tryck på valfri knapp för att fortsätta");
         scanner.nextLine();
 
         while (myTama.getAlive()) {
-            System.out.println("\n".repeat(10)); // To simulate clearing the console
+            System.out.println("\n".repeat(10)); // För att få en ren arbets yta
             myTama.printStats();
-            System.out.println("Now what do you want to do?");
-            System.out.println("1. Teach " + myTama.name + " a new word");
-            System.out.println("2. Talk to " + myTama.name);
-            System.out.println("3. Feed " + myTama.name);
-            System.out.println("4. Do nothing");
+            System.out.println("Vad vill du göra nu?");
+            System.out.println("1. Lära " + myTama.name + " ett nytt ord");
+            System.out.println("2. Prata med " + myTama.name);
+            System.out.println("3. Mata " + myTama.name);
+            System.out.println("4. Göra ingenting");
 
             String doWhat = scanner.nextLine();
 
             switch (doWhat) {
                 case "1":
-                    System.out.println("What word?");
+                    System.out.println("Vilket ord?");
                     String word = scanner.nextLine();
                     myTama.teach(word);
                     break;
@@ -39,17 +39,17 @@ public class Main {
                     myTama.feed();
                     break;
                 default:
-                    System.out.println("Doing nothing...");
+                    System.out.println("Gör ingenting...");
                     break;
             }
 
             myTama.tick();
-            System.out.println("Press Enter to continue");
+            System.out.println("Tryck ENTER för att fortsätta!");
             scanner.nextLine();
         }
 
-        System.out.println("OH NO! " + myTama.name + " is dead!");
-        System.out.println("Press ENTER to quit");
+        System.out.println("åh nej," + myTama.name + " är nu död!");
+        System.out.println("Tryck ENTER för att avsluta");
         scanner.nextLine();
         scanner.close();
     }
